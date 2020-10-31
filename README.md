@@ -1,2 +1,3 @@
 # DifferentialDrive
-Code learning about how differential drive robots work
+
+Manual control of differential drive robots.
