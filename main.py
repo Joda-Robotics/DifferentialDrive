@@ -3,8 +3,14 @@
 - Creates model (the model creates the system state and an interface to control the robot)
 '''
 
+
+import createMainGUI 
+
+
 def main():
-    print("Not yet implemented")
+    
+    createMainGUI.mainGUIApp().run()
+
 
 if __name__ == "__main__":
     main()

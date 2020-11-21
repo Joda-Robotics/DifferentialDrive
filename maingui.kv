@@ -1,0 +1,258 @@
+#:kivy 1.11.1
+
+
+
+WindowManager:
+    HomeWindow:
+    SystemWindow:
+    RobotListWindow:
+    RobotControlWindow:
+    
+<HomeWindow>:
+    name: "home"
+    GridLayout:
+        cols:1
+        
+        GridLayout:
+            cols:2
+            size_hint: 1, .2
+            Button:
+                text: "JODA PIC"
+
+            Button:
+                text: "Home Page"
+                
+        GridLayout:
+            cols:4
+            size_hint: 1, .4
+            Button:
+                text: "Home"
+            Button:
+                text: "System"
+                on_release:
+                    app.root.current = "system"
+            Button:
+                text: "Robot list"
+                on_release:
+                    app.root.current = "robotList"
+            Button:
+                text: "Quit"
+            
+        GridLayout:
+            cols:1
+            size_hint: 1, .2
+            Button:
+                text: "Status"
+                
+        GridLayout:
+            cols:2
+            
+            Label:
+                size_hint: 1, .1
+                text: "Do you accept licence?"
+            Button:
+                size_hint: 1, .1
+                text: "yes"
+                
+            Button:
+                size_hint: 1, .1
+                text: "Help"
+            Button:
+                size_hint: 1, .1
+                text: "options"
+                
+        GridLayout:
+            cols:1
+            
+
+
+
+<SystemWindow>:
+    name: "system"
+    
+    GridLayout:
+        cols:1
+        
+        GridLayout:
+            cols:2
+            size_hint: 1, .2
+            Button:
+                text: "JODA PIC"
+
+            Button:
+                text: "System Page"
+                
+        GridLayout:
+            cols:4
+            size_hint: 1, .4
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = "home"
+            Button:
+                text: "System"
+            Button:
+                text: "Robot list"
+                on_release:
+                    app.root.current = "robotList"
+            Button:
+                text: "Quit"
+            
+        GridLayout:
+            cols:1
+            size_hint: 1, .2
+            Button:
+                text: "Status"
+                
+        GridLayout:
+            cols:2
+        GridLayout:
+            cols:2        
+    
+<RobotListWindow>:
+    name: "robotList"
+    
+    GridLayout:
+        cols:1
+        
+        GridLayout:
+            cols:2
+            size_hint: 1, .2
+            Button:
+                text: "JODA PIC"
+
+            Button:
+                text: "Robot List Page"
+                
+        GridLayout:
+            cols:4
+            size_hint: 1, .4
+            Button:
+                text: "Home"
+                on_release:
+                    app.root.current = "home"
+            Button:
+                text: "System"
+                on_release:
+                    app.root.current = "system"
+            Button:
+                text: "Robot list"
+            Button:
+                text: "Quit"
+            
+        GridLayout:
+            cols:1
+            size_hint: 1, .2
+            Button:
+                text: "Status"
+                
+        GridLayout:
+            cols:1
+            GridLayout:
+                size_hint: 1, .4
+                cols:3
+            
+                Button:
+                    text: "Add"
+                
+                Button:
+                    text: "Remove"
+                
+                Button:
+                    text: "Auto all"
+            GridLayout:
+                cols:5
+                size_hint: 1,.2
+                Button:
+                    text: "Name"
+                Button:
+                    text: "Status"
+                Button:
+                    text: "Manual"
+                Button:
+                    text: "Details"
+            
+            GridLayout:
+                cols:5
+                Button:
+                    text: "Rob1"
+                Button:
+                    text: "OK!"
+                Button:
+                    text: "Manual control"
+                    on_release: app.root.current = "robotControl"
+                Button:
+                    text: "More info"
+                    
+            GridLayout:
+                cols:5
+                Button:
+                    text: "Rob2"
+                Button:
+                    text: "OK!"
+                Button:
+                    text: "Manual control"
+                Button:
+                    text: "More info"
+            
+        GridLayout:
+            cols:2
+                
+                
+<RobotControlWindow>:
+    name: "robotControl"
+    GridLayout:
+        cols:1
+        GridLayout:
+            cols:2
+            size_hint: 1, .2
+            Label:
+                text: "Rob 1"
+        
+            Button:
+                text: "Go back"
+                on_release: app.root.current = "robotList"
+        
+        GridLayout:
+            cols:1
+            Label:
+                text: "CAMERA"
+                
+        GridLayout:
+            cols:3
+            Label:
+                text: "Direction"
+            Label:
+                text: "Speed"
+            Label:
+                text: "Sensor info"
+                
+            GridLayout:
+                cols:3
+                Button:
+                    text: "On"
+                Button:
+                    text: "Forward"
+                Button:
+                    text: "Off"
+                Button:
+                    text: "Left"
+                Button:
+                    text: "Back"
+                Button:
+                    text: "Right"
+                
+            GridLayout:
+                cols:1
+                Slider:
+                    id: speed
+                    min:0
+                    max:100
+                    step:1
+                    orientation: "vertical"
+        
+            GridLayout:
+                cols:1
+                Label:
+                    text: str(speed.value)
+        
