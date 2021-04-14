@@ -1,0 +1,17 @@
+1 Chassis
+2 Motors with wheels and encoders
+1 Caster wheel
+1 Pi 0
+1 Camera
+1 powerbank
+1 9v battery
+
+2 HC-SR04 Ultrasonic distance sensor (Front and back)
+1 VL53L0X ToF distance sensor
+1 ICM-20948 IMU
+1 L298N
+2 6-cell AA battery holder
+2 SG90 servo
+1 camera pan tilt arm
+2 white LED
+2 red LED
